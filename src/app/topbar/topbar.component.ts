@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SidebarComponent } from '../sidebar/sidebar.component';
+
+import { User } from '../user';
 
 @Component({
   selector: 'app-topbar',
@@ -8,6 +9,18 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 })
 export class TopbarComponent implements OnInit {
 
+  user: User = {
+    id: 0,
+    email: 'juvao@google.com',
+    fullName: 'Juvao das Dores',
+    profilePic: '/#',
+    role: ['aluno', 'professor']
+  };
+
+  roleSelected = this.user.role[0];
+
+  roles = this.user.role;  
+
   constructor() { }
 
   ngOnInit(): void {
@@ -15,7 +28,16 @@ export class TopbarComponent implements OnInit {
 
 
   onMenuBtnClick() {
-    console.log();
-
+    console.log(this.user);
   }
+
+  roleChangeClick(role: string) {
+    this.roleSelected = role;
+  }
+
+  getFirstName(){
+    return this.user.fullName.split(' ')[0];
+  }
+
+  
 }
