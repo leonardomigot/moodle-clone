@@ -1,6 +1,8 @@
+import { EventEmitter, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 
 import { User } from '../user';
+
 
 @Component({
   selector: 'app-topbar',
@@ -18,18 +20,14 @@ export class TopbarComponent implements OnInit {
   };
 
   roleSelected = this.user.role[0];
-
-  roles = this.user.role;  
+  roles = this.user.role;   
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-
-  onMenuBtnClick() {
-    console.log(this.user);
-  }
+  
 
   roleChangeClick(role: string) {
     this.roleSelected = role;
