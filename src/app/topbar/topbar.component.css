@@ -8,3 +8,15 @@
 .parent {
   display: block;
 }
+.full-coluna {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  left: 0px;
+  transition: 0.4s;
+}
+
+._hide {
+  transform: translate(-280px); 
+  width: calc(100% + 280px);
+}

@@ -22,6 +22,9 @@ export class TopbarComponent implements OnInit {
   roleSelected = this.user.role[0];
   roles = this.user.role;   
 
+  visibility: boolean = true;
+
+
   constructor() { }
 
   ngOnInit(): void {
@@ -37,5 +40,7 @@ export class TopbarComponent implements OnInit {
     return this.user.fullName.split(' ')[0];
   }
 
-  
+  sidebarToggle(){
+    this.visibility = !this.visibility; 
+  }
 }
