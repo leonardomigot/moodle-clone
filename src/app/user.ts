@@ -3,5 +3,6 @@ export interface User {
   email: string,
   fullName: string,
   profilePic: string,
-  role: string[]
+  role: string[],
+  subject: string[]
 }

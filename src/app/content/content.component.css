@@ -9,6 +9,7 @@
 }
 .cont-top {
   margin: 48px 16px 0 16px;
+  
 }
 
 .margin-r {
@@ -20,7 +21,30 @@
 }
 
 
-
 .fixedsize {
   width: 350px;
+}
+
+.card-in {
+  height: 200px; 
+  width: min-content; 
+  border: solid 1px gray;   
+  border-radius: .25rem;
+  margin: 0 5px 0 0;
+  box-sizing:content-box
+}
+
+.image-in {
+  height: 120px; 
+  width: 348px; 
+  background-color: silver;
+  border-top-left-radius: .15rem;
+  border-top-right-radius: .15rem;
+  background-image: url('https://picsum.photos/350/150/');
+}
+
+.subject-name {
+  margin: 18px;
+  font-size: 18px;
+  font-weight: bold;
 }

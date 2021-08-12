@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { User } from '../user';
 
+import { UserService } from '../user.service';
+
 
 @Component({
   selector: 'app-topbar',
@@ -11,12 +13,14 @@ import { User } from '../user';
 })
 export class TopbarComponent implements OnInit {
 
-  user: User = {
+  users: User[] = [];
+
+  user = {
     id: 0,
-    email: 'juvao@google.com',
-    fullName: 'Juvao das Dores',
-    profilePic: '/#',
-    role: ['aluno', 'professor']
+    email: 'null',
+    fullName: 'null',
+    profilePic: 'null',
+    role: ['null']
   };
 
   roleSelected = this.user.role[0];
@@ -24,13 +28,18 @@ export class TopbarComponent implements OnInit {
 
   visibility: boolean = true;
 
+  constructor(private userService: UserService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  getUsers(): void{
+    this.users = this.userService.getUsers();
+    this.user = this.users[0];
+    this.roleSelected = this.user.role[0];
+    this.roles = this.user.role;
   }
 
-  
+  ngOnInit(): void {
+    this.getUsers();
+  }  
 
   roleChangeClick(role: string) {
     this.roleSelected = role;
