@@ -10,13 +10,15 @@ import { UserService } from '../user.service';
 export class ContentComponent implements OnInit {
 
   subjects: string[] = [];
+  students: User[] = [];
 
   constructor(private userService: UserService) {
     
   }
 
-  getSubjects(): void{
+  getSubjects(): void {
     let array = this.userService.getUsers()[0].subject;
+    this.students = this.userService.getUsers();
     this.subjects = array;
   }
 
